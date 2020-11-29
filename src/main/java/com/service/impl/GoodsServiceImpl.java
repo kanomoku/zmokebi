@@ -15,13 +15,14 @@ public class GoodsServiceImpl implements GoodsService{
 	@Resource
 	private GoodsMapper goodsMapper;
 
-	public GoodsMapper getGoodsMapper() {
+/*	
+ * 有@Resource 可以不用写set/get
+ * public GoodsMapper getGoodsMapper() {
 		return goodsMapper;
 	}
-
 	public void setGoodsMapper(GoodsMapper goodsMapper) {
 		this.goodsMapper = goodsMapper;
-	}
+	}*/
 
 	@Override
 	public List<Goods> showAllGoods() {

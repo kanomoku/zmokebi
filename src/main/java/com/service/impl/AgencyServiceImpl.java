@@ -15,12 +15,15 @@ public class AgencyServiceImpl implements AgencyService{
 	@Resource
 	private AgencyMapper agencyMapper;
 
-	public AgencyMapper getAgencyMapper() {
+	
+/*	
+ * 有@Resource 可以不用写set/get
+ * public AgencyMapper getAgencyMapper() {
 		return agencyMapper;
 	}
 	public void setAgencyMapper(AgencyMapper agencyMapper) {
 		this.agencyMapper = agencyMapper;
-	}
+	}*/
 
 	@Override
 	public List<Agency> showAllAgency() {

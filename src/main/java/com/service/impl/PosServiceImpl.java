@@ -15,13 +15,14 @@ public class PosServiceImpl implements PosService{
 	@Resource
 	private PosMapper posMapper;
 
-	public PosMapper getPosMapper() {
+/*	
+ * 有@Resource 可以不用写set/get
+ * public PosMapper getPosMapper() {
 		return posMapper;
 	}
-
 	public void setPosMapper(PosMapper posMapper) {
 		this.posMapper = posMapper;
-	}
+	}*/
 
 	@Override
 	public List<Pos> showAllPos() {

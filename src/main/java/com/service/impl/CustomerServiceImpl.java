@@ -15,13 +15,14 @@ public class CustomerServiceImpl implements CustomerService{
 	@Resource
 	private CustomerMapper customerMapper;
 
-	public CustomerMapper getCustomerMapper() {
+/*	
+ * 有@Resource 可以不用写set/get
+ * public CustomerMapper getCustomerMapper() {
 		return customerMapper;
 	}
-
 	public void setCustomerMapper(CustomerMapper customerMapper) {
 		this.customerMapper = customerMapper;
-	}
+	}*/
 
 	@Override
 	public List<Customer> showAllCustomer() {

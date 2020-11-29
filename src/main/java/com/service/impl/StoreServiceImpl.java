@@ -15,13 +15,14 @@ public class StoreServiceImpl implements StoreService{
 	@Resource
 	private StoreMapper storeMapper;
 
-	public StoreMapper getStoreMapper() {
+/*	
+ * 有@Resource 可以不用写set/get
+ * public StoreMapper getStoreMapper() {
 		return storeMapper;
 	}
-
 	public void setStoreMapper(StoreMapper storeMapper) {
 		this.storeMapper = storeMapper;
-	}
+	}*/
 
 	@Override
 	public List<Store> showAllStore() {
