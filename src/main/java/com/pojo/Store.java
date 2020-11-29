@@ -143,5 +143,17 @@ public class Store {
 	public void setStore_remark(String store_remark) {
 		Store_remark = store_remark;
 	}
+	@Override
+	public String toString() {
+		return "Store [Store_num=" + Store_num + ", Store_name=" + Store_name + ", Store_province=" + Store_province
+				+ ", Store_city=" + Store_city + ", Store_block=" + Store_block + ", Store_street=" + Store_street
+				+ ", Store_address=" + Store_address + ", Store_type=" + Store_type + ", Store_customer_num="
+				+ Store_customer_num + ", Store_agency_num=" + Store_agency_num + ", Store_location_area="
+				+ Store_location_area + ", Store_landmark1=" + Store_landmark1 + ", Store_landmark2=" + Store_landmark2
+				+ ", Store_landmark3=" + Store_landmark3 + ", Store_landmark4=" + Store_landmark4
+				+ ", Store_marked_map=" + Store_marked_map + ", Store_cooperation_start_date="
+				+ Store_cooperation_start_date + ", Store_cooperation_end_date=" + Store_cooperation_end_date
+				+ ", Store_end_reason=" + Store_end_reason + ", Store_remark=" + Store_remark + "]";
+	}
 
 }

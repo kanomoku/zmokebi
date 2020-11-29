@@ -17,4 +17,8 @@
 		#{agency_month},
 		#{agency_remark})
 	</insert>
+	
+	<select id="selectAllAgency" resultType="Agency">
+		select * from agency
+	</select>
 </mapper>

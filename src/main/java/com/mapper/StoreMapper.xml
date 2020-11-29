@@ -27,4 +27,8 @@
 		#{store_end_reason},
 		#{store_remark})
 	</insert>
+	
+	<select id="selectAllStore" resultType="Store">
+		select * from store
+	</select>
 </mapper>

@@ -26,9 +26,8 @@ public class CustomerServiceImpl implements CustomerService{
 
 	@Override
 	public List<Customer> showAllCustomer() {
-		return null;
-//		List<Menu> selByPid = CustomerMapper.selByPid(0);
-//		return selByPid;
+		List<Customer> customerList = customerMapper.selectAllCustomer();
+		return customerList;
 	}
 
 	@Override

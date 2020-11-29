@@ -26,9 +26,8 @@ public class StoreServiceImpl implements StoreService{
 
 	@Override
 	public List<Store> showAllStore() {
-		return null;
-//		List<Menu> selByPid = StoreMapper.selByPid(0);
-//		return selByPid;
+		List<Store> storeList = storeMapper.selectAllStore();
+		return storeList;
 	}
 
 	@Override

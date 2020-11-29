@@ -15,4 +15,8 @@
 		#{customer_month},
 		#{customer_remark})
 	</insert>
+	
+	<select id="selectAllCustomer" resultType="Customer">
+		select * from customer
+	</select>
 </mapper>

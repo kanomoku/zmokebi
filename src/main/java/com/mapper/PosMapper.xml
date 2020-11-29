@@ -25,4 +25,8 @@
 		#{pos_agency_num},
 		#{pos_remark})
 	</insert>
+	
+	<select id="selectAllPos" resultType="Pos">
+		select * from pos
+	</select>
 </mapper>

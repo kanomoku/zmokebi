@@ -26,9 +26,8 @@ public class PosServiceImpl implements PosService{
 
 	@Override
 	public List<Pos> showAllPos() {
-		return null;
-//		List<Menu> selByPid = PosMapper.selByPid(0);
-//		return selByPid;
+		List<Pos> posList = posMapper.selectAllPos();
+		return posList;
 	}
 
 	@Override

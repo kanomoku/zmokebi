@@ -64,5 +64,12 @@ public class Agency {
 	public void setAgency_remark(String agency_remark) {
 		this.agency_remark = agency_remark;
 	}
+	@Override
+	public String toString() {
+		return "Agency [agency_num=" + agency_num + ", agency_username=" + agency_username + ", agency_password="
+				+ agency_password + ", agency_name=" + agency_name + ", agency_telephone=" + agency_telephone
+				+ ", agency_gender=" + agency_gender + ", agency_year=" + agency_year + ", agency_month=" + agency_month
+				+ ", agency_remark=" + agency_remark + "]";
+	}
 
 }

@@ -51,6 +51,12 @@ public class Customer {
 	public void setCustomer_remark(String customer_remark) {
 		Customer_remark = customer_remark;
 	}
+	@Override
+	public String toString() {
+		return "Customer [Customer_num=" + Customer_num + ", Customer_name=" + Customer_name + ", Customer_telephone="
+				+ Customer_telephone + ", Customer_gender=" + Customer_gender + ", Customer_year=" + Customer_year
+				+ ", Customer_month=" + Customer_month + ", Customer_remark=" + Customer_remark + "]";
+	}
 
 
 }

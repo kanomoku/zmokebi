@@ -149,18 +149,7 @@ public class Goods {
 				+ ", Goods_second_class_agent_price=" + Goods_second_class_agent_price
 				+ ", Goods_third_class_agent_price=" + Goods_third_class_agent_price + ", Goods_store_purchase_price="
 				+ Goods_store_purchase_price + ", Goods_sale_price=" + Goods_sale_price + ", Goods_remark="
-				+ Goods_remark + ", getGoods_num()=" + getGoods_num() + ", getGoods_name()=" + getGoods_name()
-				+ ", getGoods_flavor()=" + getGoods_flavor() + ", getGoods_category()=" + getGoods_category()
-				+ ", getGoods_specification()=" + getGoods_specification() + ", getGoods_expiration_date()="
-				+ getGoods_expiration_date() + ", getGoods_plant()=" + getGoods_plant() + ", getGoods_legal_person()="
-				+ getGoods_legal_person() + ", getGoods_mill_price()=" + getGoods_mill_price()
-				+ ", getGoods_first_class_agent_price()=" + getGoods_first_class_agent_price()
-				+ ", getGoods_second_class_agent_price()=" + getGoods_second_class_agent_price()
-				+ ", getGoods_third_class_agent_price()=" + getGoods_third_class_agent_price()
-				+ ", getGoods_store_purchase_price()=" + getGoods_store_purchase_price() + ", getGoods_sale_price()="
-				+ getGoods_sale_price() + ", getGoods_remark()=" + getGoods_remark() + ", getClass()=" + getClass()
-				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
+				+ Goods_remark + "]";
 	}
-
 
 }

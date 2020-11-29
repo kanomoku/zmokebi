@@ -123,5 +123,15 @@ public class Pos {
 	public void setPos_remark(String pos_remark) {
 		Pos_remark = pos_remark;
 	}
+	@Override
+	public String toString() {
+		return "Pos [Pos_num=" + Pos_num + ", Pos_year=" + Pos_year + ", Pos_month=" + Pos_month + ", Pos_day="
+				+ Pos_day + ", Pos_store_num=" + Pos_store_num + ", Pos_store_remark=" + Pos_store_remark
+				+ ", Pos_customer_num=" + Pos_customer_num + ", Pos_customer_remark=" + Pos_customer_remark
+				+ ", Pos_goods_num=" + Pos_goods_num + ", Pos_goods_remark=" + Pos_goods_remark + ", Pos_quantity="
+				+ Pos_quantity + ", Pos_sale_price=" + Pos_sale_price + ", Pos_total_price=" + Pos_total_price
+				+ ", Pos_reduced_price=" + Pos_reduced_price + ", Pos_final_price=" + Pos_final_price
+				+ ", pos_agency_num=" + pos_agency_num + ", Pos_remark=" + Pos_remark + "]";
+	}
 
 }

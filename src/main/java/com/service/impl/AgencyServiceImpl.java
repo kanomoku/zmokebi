@@ -27,9 +27,8 @@ public class AgencyServiceImpl implements AgencyService{
 
 	@Override
 	public List<Agency> showAllAgency() {
-		return null;
-//		List<Menu> selByPid = AgencyMapper.selByPid(0);
-//		return selByPid;
+		List<Agency> agencyList = agencyMapper.selectAllAgency();
+		return agencyList;
 	}
 
 	@Override
