@@ -42,7 +42,7 @@ import com.service.impl.StoreServiceImpl;
 public class ReadExcelSaveToDBSpringMybatisTest {
 	public static void main(String[] args) {
 		try {
-			ApplicationContext ac = new ClassPathXmlApplicationContext("applicationContext.xml");
+			ApplicationContext ac = new ClassPathXmlApplicationContext("applicationContextSpringMybatis.xml");
 
 			Workbook workbook = WorkbookFactory.create(new File("D:\\asd.xlsx"));
 

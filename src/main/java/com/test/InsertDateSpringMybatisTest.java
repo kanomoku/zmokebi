@@ -22,7 +22,7 @@ import com.service.impl.StoreServiceImpl;
 public class InsertDateSpringMybatisTest {
 	public static void main(String[] args) {
 
-		ApplicationContext ac = new ClassPathXmlApplicationContext("applicationContext.xml");
+		ApplicationContext ac = new ClassPathXmlApplicationContext("applicationContextSpringMybatis.xml");
 		
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`");
 		String[] beanDefinitionNames = ac.getBeanDefinitionNames();
