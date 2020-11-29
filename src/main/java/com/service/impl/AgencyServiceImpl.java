@@ -18,7 +18,6 @@ public class AgencyServiceImpl implements AgencyService{
 	public AgencyMapper getAgencyMapper() {
 		return agencyMapper;
 	}
-
 	public void setAgencyMapper(AgencyMapper agencyMapper) {
 		this.agencyMapper = agencyMapper;
 	}
