@@ -1,8 +1,6 @@
 package com.pojo;
 
-import java.math.BigDecimal;
-
-public class Angency {
+public class Agency {
 	private long agency_num;
 	private String agency_username;
 	private String agency_password;

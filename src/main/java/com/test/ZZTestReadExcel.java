@@ -21,12 +21,12 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 
-import com.mapper.AngencyMapper;
+import com.mapper.AgencyMapper;
 import com.mapper.CustomerMapper;
 import com.mapper.GoodsMapper;
 import com.mapper.PosMapper;
 import com.mapper.StoreMapper;
-import com.pojo.Angency;
+import com.pojo.Agency;
 import com.pojo.Customer;
 import com.pojo.Goods;
 import com.pojo.Pos;
@@ -42,13 +42,13 @@ public class ZZTestReadExcel {
 			CustomerMapper CustomerMapper = sqlSession.getMapper(CustomerMapper.class);
 			GoodsMapper goodsMapper = sqlSession.getMapper(GoodsMapper.class);
 			PosMapper posMapper = sqlSession.getMapper(PosMapper.class);
-			AngencyMapper angencyMapper = sqlSession.getMapper(AngencyMapper.class);
+			AgencyMapper angencyMapper = sqlSession.getMapper(AgencyMapper.class);
 
 			Workbook workbook = WorkbookFactory.create(new File("D:\\asd.xlsx"));
 
-			List<Angency> angencyList = getAngencyList(workbook.getSheetAt(0));
+			List<Agency> angencyList = getAngencyList(workbook.getSheetAt(0));
 			for (int i = 0; i < angencyList.size(); i++) {
-				angencyMapper.insertAngency(angencyList.get(i));
+				angencyMapper.insertAgency(angencyList.get(i));
 			}
 
 			List<Customer> CustomerList = getCustomerList(workbook.getSheetAt(1));
@@ -197,15 +197,15 @@ public class ZZTestReadExcel {
 			pos.setPos_total_price(new BigDecimal(str[16]));
 			pos.setPos_reduced_price(new BigDecimal(str[17]));
 			pos.setPos_final_price(new BigDecimal(str[18]));
-			pos.setPos_remark(str[19]);
-
+			pos.setPos_agency_num(Long.valueOf(str[19]));
+			pos.setPos_remark(str[20]);
 			list.add(pos);
 		}
 		return list;
 	}
 
-	private static List<Angency> getAngencyList(Sheet sheet) throws ParseException {
-		List<Angency> list = new ArrayList();
+	private static List<Agency> getAngencyList(Sheet sheet) throws ParseException {
+		List<Agency> list = new ArrayList();
 		for (int i = 3; i <= sheet.getLastRowNum(); i++) {
 			Row row = sheet.getRow(i);
 			String[] str = new String[row.getLastCellNum()];
@@ -214,7 +214,7 @@ public class ZZTestReadExcel {
 				cell.setCellType(CellType.STRING);
 				str[j] = cell.getStringCellValue().trim();
 			}
-			Angency angency = new Angency();
+			Agency angency = new Agency();
 			angency.setAgency_num(Long.valueOf(str[0]));
 			angency.setAgency_username(str[1]);
 			angency.setAgency_password(str[2]);

@@ -22,6 +22,7 @@
 		#{pos_total_price},
 		#{pos_reduced_price},
 		#{pos_final_price},
+		#{pos_agency_num},
 		#{pos_remark})
 	</insert>
 </mapper>

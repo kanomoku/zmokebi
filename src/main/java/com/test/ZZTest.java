@@ -12,12 +12,12 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.apache.log4j.Logger;
 
-import com.mapper.AngencyMapper;
+import com.mapper.AgencyMapper;
 import com.mapper.CustomerMapper;
 import com.mapper.GoodsMapper;
 import com.mapper.PosMapper;
 import com.mapper.StoreMapper;
-import com.pojo.Angency;
+import com.pojo.Agency;
 import com.pojo.Customer;
 import com.pojo.Goods;
 import com.pojo.Pos;
@@ -34,22 +34,22 @@ public class ZZTest {
 			CustomerMapper customerMapper = sqlSession.getMapper(CustomerMapper.class);
 			GoodsMapper goodsMapper = sqlSession.getMapper(GoodsMapper.class);
 			PosMapper posMapper = sqlSession.getMapper(PosMapper.class);
-			AngencyMapper angencyMapper = sqlSession.getMapper(AngencyMapper.class);
+			AgencyMapper agencyMapper = sqlSession.getMapper(AgencyMapper.class);
 
 			Logger logger = Logger.getLogger(ZZTest.class);
 
-			logger.info("--------------------insert Angency");
-			Angency angency = new Angency();
-			angency.setAgency_num(2050501);
-			angency.setAgency_username("abc");
-			angency.setAgency_password("abc");
-			angency.setAgency_name("张紫");
-			angency.setAgency_telephone("16688889999");
-			angency.setAgency_gender("男");
-			angency.setAgency_year("1991");
-			angency.setAgency_month("11");
-			angency.setAgency_remark("负责人备注");
-			angencyMapper.insertAngency(angency);
+			logger.info("--------------------insert agency");
+			Agency agency = new Agency();
+			agency.setAgency_num(2050501);
+			agency.setAgency_username("abc");
+			agency.setAgency_password("abc");
+			agency.setAgency_name("张紫");
+			agency.setAgency_telephone("16688889999");
+			agency.setAgency_gender("男");
+			agency.setAgency_year("1991");
+			agency.setAgency_month("11");
+			agency.setAgency_remark("负责人备注");
+			agencyMapper.insertAgency(agency);
 
 			logger.info("--------------------insert Customer");
 			Customer customer = new Customer();
@@ -128,6 +128,7 @@ public class ZZTest {
 			pos.setPos_total_price(new BigDecimal("700"));
 			pos.setPos_reduced_price(new BigDecimal("50"));
 			pos.setPos_final_price(new BigDecimal("650"));
+			pos.setPos_agency_num(2050501L);
 			pos.setPos_remark("POS备注");
 			posMapper.insertPos(pos);
 

@@ -18,7 +18,15 @@ public class Pos {
 	private BigDecimal Pos_total_price;
 	private BigDecimal Pos_reduced_price;
 	private BigDecimal Pos_final_price;
+	private	long	pos_agency_num	;
 	private String Pos_remark;
+	
+	public long getPos_agency_num() {
+		return pos_agency_num;
+	}
+	public void setPos_agency_num(long pos_agency_num) {
+		this.pos_agency_num = pos_agency_num;
+	}
 	public long getPos_num() {
 		return Pos_num;
 	}

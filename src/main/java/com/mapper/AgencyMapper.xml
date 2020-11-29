@@ -3,9 +3,9 @@
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- 这里路径要和接口完全一致 -->
-<mapper namespace="com.mapper.AngencyMapper">
-	<insert id="insertAngency" parameterType="Angency">
-		insert into angency
+<mapper namespace="com.mapper.AgencyMapper">
+	<insert id="insertAgency" parameterType="Agency">
+		insert into agency
 		values(
 		#{agency_num},
 		#{agency_username},
