@@ -23,7 +23,7 @@ import com.pojo.Goods;
 import com.pojo.Pos;
 import com.pojo.Store;
 
-public class InsertDataTest {
+public class InsertDataMybatisTest {
 	public static void main(String[] args) {
 		try {
 			InputStream resourceAsStream = Resources.getResourceAsStream("mybatis.xml");
@@ -36,7 +36,7 @@ public class InsertDataTest {
 			PosMapper posMapper = sqlSession.getMapper(PosMapper.class);
 			AgencyMapper agencyMapper = sqlSession.getMapper(AgencyMapper.class);
 
-			Logger logger = Logger.getLogger(InsertDataTest.class);
+			Logger logger = Logger.getLogger(InsertDataMybatisTest.class);
 
 			logger.info("--------------------insert agency");
 			Agency agency = new Agency();

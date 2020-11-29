@@ -32,7 +32,7 @@ import com.pojo.Goods;
 import com.pojo.Pos;
 import com.pojo.Store;
 
-public class ReadExcelSaveToDBTest {
+public class ReadExcelSaveToDBMybatisTest {
 	public static void main(String[] args) {
 		try {
 			InputStream resourceAsStream = Resources.getResourceAsStream("mybatis.xml");
