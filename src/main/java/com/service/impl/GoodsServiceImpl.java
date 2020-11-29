@@ -26,9 +26,8 @@ public class GoodsServiceImpl implements GoodsService{
 
 	@Override
 	public List<Goods> showAllGoods() {
-		return null;
-//		List<Menu> selByPid = goodsMapper.selByPid(0);
-//		return selByPid;
+		List<Goods> goodsList = goodsMapper.selectAllGoods();
+		return goodsList;
 	}
 
 	@Override

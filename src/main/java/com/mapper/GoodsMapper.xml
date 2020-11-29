@@ -23,4 +23,8 @@
 		#{goods_sale_price},
 		#{goods_remark})
 	</insert>
+	
+	<select id="selectAllGoods" resultType="Goods">
+		select * from goods
+	</select>
 </mapper>

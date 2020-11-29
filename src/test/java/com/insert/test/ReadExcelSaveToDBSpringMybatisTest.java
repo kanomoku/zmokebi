@@ -1,4 +1,4 @@
-package com.test;
+package com.insert.test;
 
 import java.io.File;
 import java.io.IOException;
@@ -20,6 +20,8 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.mapper.AgencyMapper;
 import com.mapper.CustomerMapper;
@@ -31,44 +33,48 @@ import com.pojo.Customer;
 import com.pojo.Goods;
 import com.pojo.Pos;
 import com.pojo.Store;
+import com.service.impl.AgencyServiceImpl;
+import com.service.impl.CustomerServiceImpl;
+import com.service.impl.GoodsServiceImpl;
+import com.service.impl.PosServiceImpl;
+import com.service.impl.StoreServiceImpl;
 
-public class ReadExcelSaveToDBMybatisTest {
+public class ReadExcelSaveToDBSpringMybatisTest {
 	public static void main(String[] args) {
 		try {
-			InputStream resourceAsStream = Resources.getResourceAsStream("mybatis.xml");
-			SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(resourceAsStream);
-			SqlSession sqlSession = sqlSessionFactory.openSession();
-			StoreMapper storeMapper = sqlSession.getMapper(StoreMapper.class);
-			CustomerMapper CustomerMapper = sqlSession.getMapper(CustomerMapper.class);
-			GoodsMapper goodsMapper = sqlSession.getMapper(GoodsMapper.class);
-			PosMapper posMapper = sqlSession.getMapper(PosMapper.class);
-			AgencyMapper angencyMapper = sqlSession.getMapper(AgencyMapper.class);
+			ApplicationContext ac = new ClassPathXmlApplicationContext("applicationContextSpringMybatis.xml");
 
 			Workbook workbook = WorkbookFactory.create(new File("D:\\asd.xlsx"));
 
+			GoodsServiceImpl goodsServiceImpl = ac.getBean("goodsServiceImpl", GoodsServiceImpl.class);
+			AgencyServiceImpl agencyServiceImpl = ac.getBean("agencyServiceImpl", AgencyServiceImpl.class);
+			CustomerServiceImpl customerServiceImpl = ac.getBean("customerServiceImpl", CustomerServiceImpl.class);
+			StoreServiceImpl storeServiceImpl = ac.getBean("storeServiceImpl", StoreServiceImpl.class);
+			PosServiceImpl posServiceImpl = ac.getBean("posServiceImpl", PosServiceImpl.class);
+
 			List<Agency> angencyList = getAngencyList(workbook.getSheetAt(0));
 			for (int i = 0; i < angencyList.size(); i++) {
-				angencyMapper.insertAgency(angencyList.get(i));
+				agencyServiceImpl.insertAgency(angencyList.get(i));
 			}
 
-			List<Customer> CustomerList = getCustomerList(workbook.getSheetAt(1));
-			for (int i = 0; i < CustomerList.size(); i++) {
-				CustomerMapper.insertCustomer(CustomerList.get(i));
+			List<Customer> customerList = getCustomerList(workbook.getSheetAt(1));
+			for (int i = 0; i < customerList.size(); i++) {
+				customerServiceImpl.insertCustomer(customerList.get(i));
 			}
 			List<Store> storeList = getStoreList(workbook.getSheetAt(2));
 			for (int i = 0; i < storeList.size(); i++) {
-				storeMapper.insertStore(storeList.get(i));
+				storeServiceImpl.insertStore(storeList.get(i));
 			}
+
 			List<Goods> goodsList = getGoodsList(workbook.getSheetAt(3));
 			for (int i = 0; i < goodsList.size(); i++) {
-				goodsMapper.insertGoods(goodsList.get(i));
+				goodsServiceImpl.insertGoods(goodsList.get(i));
 			}
 			List<Pos> posList = getPosList(workbook.getSheetAt(4));
 			for (int i = 0; i < posList.size(); i++) {
-				posMapper.insertPos(posList.get(i));
+				posServiceImpl.insertPos(posList.get(i));
 			}
-			sqlSession.commit();
-			sqlSession.close();
+			
 		} catch (EncryptedDocumentException e) {
 			e.printStackTrace();
 		} catch (IOException e) {

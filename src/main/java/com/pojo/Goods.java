@@ -162,4 +162,5 @@ public class Goods {
 				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
 	}
 
+
 }
