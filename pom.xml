@@ -145,6 +145,7 @@ HDGF － 提供读写Microsoft Visio格式档案的功能
 					<!-- / 相当于把项目发布名称为ROOT -->
 					<!-- /abc -->
 					<path>/</path>
+					<ignorePackaging>true</ignorePackaging>
 				</configuration>
 			</plugin>
 		</plugins>
